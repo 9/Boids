@@ -58,6 +58,12 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        List<Boid> neighbors = GetNeighbors(this);
+
+        newVelocity = velocity;
+        newPosition = this.transform.position;
+
+
 
 
 

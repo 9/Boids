@@ -28,15 +28,18 @@ public class boidSpawner : MonoBehaviour
     void Start()
     {
         S = this;
+
         for (int i = 0; i < numBoids; i++)
+        {
             Instantiate(boidPrefab);
+        }
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
         Vector3 mousePos2D = new Vector3(Input.mousePosition.x, Input.mousePosition.y, this.transform.position.y);
-        mousePos = Camera.main.GetComponent<Camera>().ScreenToWorldPoint(mousePos2D);
+        mousePos = GetComponent<Camera>().ScreenToWorldPoint(mousePos2D);
         //mousePos = mousePos2D;
 
     }
